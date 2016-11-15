@@ -16,3 +16,7 @@ Epsilon = 0.00001   # constant
 # dates = as.numeric(nodeData$date_pub)   # converts dates to ints
 # hist(dates)                             # prints a histogram
 
+# matrix multiplication 
+# 4 * 2 matrix by 2 * 3
+# inner has to match
+
