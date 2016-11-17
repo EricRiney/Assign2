@@ -16,7 +16,7 @@ setwd("/Users/ericriner/Documents/Code/UW/370/Assign2")
 
 data.a <- c(1, 0, 2, 0, 4, 3, 3, 0, 1, 1, 0, 0, 2, 0, 4, 0, 1, 0, 0, 0, 1, 0, 0, 1, 8, 0, 3, 0, 5, 2, 0, 0, 0, 0, 0, 0)
 matrix.a <- matrix(data.a, nrow = 6, ncol = 6, byrow = TRUE)
-matrix.a
+matrix.a            # sanity check
 diag(matrix.a) <- 0 # zeros out the diag of the matrix
 colSums(matrix.a)   # sums the columns
 
@@ -24,10 +24,20 @@ matrixSweep = fractions(sweep(matrix.a, 2, colSums(matrix.a), FUN="/"))
 matrixScale = fractions(scale(matrix.a, center=FALSE, scale=colSums(matrix.a)))
 matrixCentered = attr(matrixScale, 'scaled:scale') 
 
-for (val in matrixCentered)
-  if(val!=0) {
-    val=0
+for (i in  1:6) {
+  if((matrixCentered[i] == 0)) {
+    matrixCentered[i]=1
   }
+  else if(!is.na(matrixCentered[i] != 0)) {
+    matrixCentered[i]=0
+  }
+}
+
+matrixCentered # sanity check
+
+
+
+
 
 # P = Alpha * H +  
 
