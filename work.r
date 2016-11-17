@@ -22,7 +22,12 @@ colSums(matrix.a)   # sums the columns
 
 matrixSweep = fractions(sweep(matrix.a, 2, colSums(matrix.a), FUN="/")) 
 matrixScale = fractions(scale(matrix.a, center=FALSE, scale=colSums(matrix.a)))
+matrixCentered = attr(matrixScale, 'scaled:scale') 
 
+for (val in matrixCentered)
+  if(val!=0) {
+    val=0
+  }
 
 # P = Alpha * H +  
 
