@@ -33,9 +33,9 @@ for (i in  1:6) {
   }
 }
 
-matrixCentered # sanity check
+danglingNodes # sanity check
 
-articleVector
+articleVector = fractions(c(3/14,2/14, 5/14, 1/14, 2/14, 1/14))
 
 
 
