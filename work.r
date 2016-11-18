@@ -21,7 +21,7 @@ diag(matrixData) <- 0 # zeros out the diag of the matrix
 
 lilMatrix  = fractions(sweep(matrixData, 2, colSums(matrixData), FUN="/")) 
 lilMatrixScale = fractions(scale(matrixData, center=FALSE, scale=colSums(matrixData)))
-danglingNodes = attr(matrixScale, 'scaled:scale') 
+danglingNodes = attr(lilMatrixScale, 'scaled:scale') 
 
 for (i in  1:6) {
   if((danglingNodes[i] == 0)) {
@@ -32,7 +32,9 @@ for (i in  1:6) {
   }
 }
 
-articleVector = fractions(c(3/14,2/14, 5/14, 1/14, 2/14, 1/14))
+articleVector = fractions(c(3/14,2/14, 5/14, 1/14, 2/14, 1/14)) 
 initialStartVector = fractions(c(1/6,1/6,1/6,1/6,1/6,1/6))
+
+lilMatrix[,2] <- fractions(c(3/14,2/14, 5/14, 1/14, 2/14, 1/14))
 
 
